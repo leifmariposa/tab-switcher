@@ -1,5 +1,10 @@
+@import "ui-variables";
+@import "syntax-variables";
+
 atom-workspace.theme-one-dark-ui,
-atom-workspace.theme-one-light-ui {
+atom-workspace.theme-one-light-ui,
+atom-workspace.theme-taz-dark-ui,
+atom-workspace.theme-taz-light-ui {
   atom-panel-container.tab-switcher {
     position: static;
   }
@@ -49,23 +54,22 @@ ol.tab-switcher-tab-list {
 
   display: inline-block;
   margin: 0;
-  padding: 0.5em 0;
-  text-align: left;
+  padding: 1.2em 0;
   list-style: none;
 
-  background-color: rgba(32, 33, 35, 0.7);
+  background-color: @tool-panel-background-color;
   border-radius: 1em;
-  font-size: 150%;
-  color: white;
+  font-size: 125%;
+  color: @text-color;
 
   li {
     display: flex;
 
     &.current {
-      background: linear-gradient(to bottom, #105db8, #3380db);
+      background: @background-color-selected;
       border-top: solid 1px white;
       border-bottom: solid 1px white;
-      color: white;
+      color: @text-color;
     }
 
     &:not(.current) {
@@ -74,13 +78,18 @@ ol.tab-switcher-tab-list {
     }
   }
 
+  .tab-label {
+      float: left;
+      width: 250px;
+      color: @text-color;
+  }
+
   .icon {
     margin: 0 0.5em;
   }
 
   .tab-sublabel {
-    font-size: 75%;
-    color: #d4d4d4;
+    color: @text-color-subtle;
     margin: 0 1em;
   }
 
