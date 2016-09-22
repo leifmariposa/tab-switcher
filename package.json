@@ -3,7 +3,7 @@
   "main": "./lib/tab-switcher",
   "version": "0.0.0",
   "description": "Most recently used (MRU) tab switcher for Atom.",
-  "repository": "https://github.com/oggy/tab-switcher",
+  "repository": "https://github.com/leifmariposa/taz-tab-switcher",
   "license": "MIT",
   "engines": {
     "atom": ">=1.7.0 <2.0.0"

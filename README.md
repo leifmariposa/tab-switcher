@@ -1,4 +1,8 @@
-# Tab Switcher
+# Taz Tab Switcher
+
+Fork of the Tab Switcher package where the apperance has been tweaked a little.
+
+To be used together with package taz-fuzzy-finder and taz-dark-ui/taz-light-ui theme.
 
 [Atom][atom] package that let's you easily and elegantly switch between your
 most recently active tabs. Like "Command-TAB" or "Alt-TAB" for applications.
