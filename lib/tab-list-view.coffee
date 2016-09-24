@@ -50,30 +50,6 @@ class TabListView
 
     @panel = vert.parentNode
 
-    mouseMove = (event) =>
-      # Event may trigger without a real mouse move if the list scrolls.
-      return if not @mouseMoved(event)
-      if (li = event.target.closest('li'))
-        id = parseInt(li.getAttribute('data-id'))
-        tabSwitcher.setCurrentId(id)
-
-    @disposable.add @ol.addEventListener 'mouseenter', (event) =>
-      @ol.addEventListener 'mousemove', mouseMove
-
-    @disposable.add @ol.addEventListener 'mouseleave', (event) =>
-      @lastMouseCoords = null
-      @ol.removeEventListener 'mousemove', mouseMove
-
-    @disposable.add @ol.addEventListener 'click', (event) =>
-      if (li = event.target.closest('li'))
-        id = parseInt(li.getAttribute('data-id'))
-        tabSwitcher.select(id)
-
-  mouseMoved: (event) ->
-    result = @lastMouseCoords? and (@lastMouseCoords[0] != event.screenX or @lastMouseCoords[1] != event.screenY)
-    @lastMouseCoords = [event.screenX, event.screenY]
-    result
-
   updateAnimationDelay: (delay) ->
     if delay == 0
       @panel.style.transitionDelay = ''
